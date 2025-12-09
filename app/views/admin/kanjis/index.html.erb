@@ -1,0 +1,63 @@
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Quản lý Kanji</h1>
+      </div>
+      <div class="col-sm-6 text-right">
+        <a href="<%= new_admin_kanji_path %>" class="btn btn-primary">
+          <i class="fas fa-plus"></i> Thêm mới
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Danh sách từ vựng</h3>
+      </div>
+      <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Chữ Hán</th>
+            <th>Hán Việt</th>
+            <th>Nghĩa</th>
+            <th>On / Kun</th>
+            <th>Level</th>
+            <th>Thao tác</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @kanjis.each do |kanji| %>
+            <tr>
+              <td><%= kanji.id %></td>
+              <td><span class="badge badge-info" style="font-size: 1.2em;"><%= kanji.character %></span></td>
+              <td><%= kanji.hanviet %></td>
+              <td><%= kanji.meaning %></td>
+              <td>
+                <small class="d-block text-muted">On: <%= kanji.onyomi %></small>
+                <small class="d-block text-muted">Kun: <%= kanji.kunyomi %></small>
+              </td>
+              <td><%= kanji.level || "N/A" %></td>
+              <td>
+                <a href="<%= edit_admin_kanji_path(kanji) %>" class="btn btn-sm btn-warning">
+                  <i class="fas fa-edit"></i>
+                </a>
+
+                <%= button_to admin_kanji_path(kanji), method: :delete, form: {style: 'display:inline-block;'}, class: "btn btn-sm btn-danger", onclick: "return confirm('Bạn chắc chắn muốn xóa?')" do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

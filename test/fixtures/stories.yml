@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kanji: one
+  content: MyText
+  status: MyString
+  ai_generated: false
+
+two:
+  kanji: two
+  content: MyText
+  status: MyString
+  ai_generated: false

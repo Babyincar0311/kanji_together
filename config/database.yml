@@ -1,0 +1,23 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: kanji_together_development
+  username: <%= Rails.application.credentials.db[:username] %>
+  password: <%= Rails.application.credentials.db[:password] %>
+
+test:
+  <<: *default
+  database: kanji_together_test
+  username: <%= Rails.application.credentials.db[:username] %>
+  password: <%= Rails.application.credentials.db[:password] %>
+
+production:
+  <<: *default
+  database: kanji_together_production
+  username: <%= Rails.application.credentials.production_db[:username] %>
+  password: <%= Rails.application.credentials.production_db[:password] %>
