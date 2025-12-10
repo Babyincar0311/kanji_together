@@ -1,0 +1,26 @@
+<div class="login-box" style="margin: 50px auto;">
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <span class="h1"><b>Xác thực</b> OTP</span>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Chúng tôi đã gửi mã 6 số đến email của bạn.</p>
+
+      <%= form_with url: verify_otp_path, local: true do |f| %>
+        <div class="input-group mb-3">
+          <%= f.text_field :otp_code, class: "form-control", placeholder: "Nhập mã OTP..." %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-key"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <%= f.submit "Kích hoạt ngay", class: "btn btn-primary btn-block" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

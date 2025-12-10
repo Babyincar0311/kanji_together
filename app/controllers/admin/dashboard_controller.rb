@@ -1,4 +1,4 @@
-class Admin::DashboardController < ApplicationController
+class Admin::DashboardController < Admin::BaseController
   def index
     # Đổi tên biến cho khớp với file View đã tạo
     @user_count     = User.count

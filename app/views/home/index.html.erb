@@ -1,0 +1,44 @@
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold text-primary">Học Kanji Cùng AI</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">
+      Khám phá cách học tiếng Nhật hoàn toàn mới. Hệ thống sử dụng AI để tạo ra các câu chuyện thú vị, giúp bạn ghi nhớ Hán tự nhanh chóng và lâu dài.
+    </p>
+
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <% if user_signed_in? %>
+        <%= link_to "Vào bàn học ngay", "#", class: "btn btn-primary btn-lg px-4 gap-3" %>
+      <% else %>
+        <%= link_to "Bắt đầu miễn phí", new_user_registration_path, class: "btn btn-primary btn-lg px-4 gap-3" %>
+        <%= link_to "Tìm hiểu thêm", "#", class: "btn btn-outline-secondary btn-lg px-4" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container px-4 py-5" id="featured-3">
+  <h2 class="pb-2 border-bottom">Tính năng nổi bật</h2>
+  <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="feature col">
+      <div class="feature-icon bg-primary bg-gradient text-white rounded-3 mb-3 p-3 d-inline-block">
+        <i class="fas fa-brain fa-2x"></i>
+      </div>
+      <h2>Học qua Stories</h2>
+      <p>AI tự động tạo câu chuyện dựa trên bộ thủ, giúp bạn nhớ mặt chữ siêu nhanh.</p>
+    </div>
+    <div class="feature col">
+      <div class="feature-icon bg-primary bg-gradient text-white rounded-3 mb-3 p-3 d-inline-block">
+        <i class="fas fa-tasks fa-2x"></i>
+      </div>
+      <h2>Flashcards</h2>
+      <p>Ôn tập lại kiến thức đã học với hệ thống Flashcard thông minh (SRS).</p>
+    </div>
+    <div class="feature col">
+      <div class="feature-icon bg-primary bg-gradient text-white rounded-3 mb-3 p-3 d-inline-block">
+        <i class="fas fa-chart-line fa-2x"></i>
+      </div>
+      <h2>Theo dõi tiến độ</h2>
+      <p>Thống kê chi tiết lộ trình học tập và số lượng Kanji bạn đã chinh phục.</p>
+    </div>
+  </div>
+</div>

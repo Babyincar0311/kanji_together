@@ -1,3 +1,4 @@
-class Admin::BaseController < ApplicationController# Sử dụng layout AdminLTE
+class Admin::BaseController < ApplicationController
   before_action :authenticate_admin_user!
+  layout 'admin'
 end

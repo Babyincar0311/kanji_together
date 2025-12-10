@@ -4,14 +4,15 @@
   <title>Admin Panel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- AdminLTE CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
 
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+
+  <%= javascript_importmap_tags %>
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -20,20 +21,14 @@
   <%= render "admin/shared/navbar" %>
   <%= render "admin/shared/sidebar" %>
 
-  <!-- Main content -->
   <div class="content-wrapper p-3">
     <%= yield %>
   </div>
 
 </div>
 
-<!-- jQuery -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-
-<!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- AdminLTE -->
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
 
 </body>
