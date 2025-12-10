@@ -1,10 +1,7 @@
 class Admin::KanjisController < ApplicationController
-  layout "admin" # Sử dụng giao diện Admin
-
   before_action :set_kanji, only: [:edit, :update, :destroy]
 
   def index
-    # Lấy danh sách Kanji, mới nhất lên đầu, phân trang (nếu có gem kaminari) hoặc lấy hết
     @kanjis = Kanji.order(created_at: :desc)
   end
 
@@ -23,7 +20,6 @@ class Admin::KanjisController < ApplicationController
   end
 
   def edit
-    # @kanji đã được tìm thấy nhờ before_action
   end
 
   def update

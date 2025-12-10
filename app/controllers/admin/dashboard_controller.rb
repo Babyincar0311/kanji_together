@@ -1,6 +1,4 @@
 class Admin::DashboardController < ApplicationController
-  layout "admin" # <--- QUAN TRỌNG: Dòng này giúp hiện Menu trái và trên
-
   def index
     # Đổi tên biến cho khớp với file View đã tạo
     @user_count     = User.count
