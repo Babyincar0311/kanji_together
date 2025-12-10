@@ -1,7 +1,6 @@
 class VerificationController < ApplicationController
   layout "auth"
   def new
-    # Chỉ hiển thị form
   end
 
   def create

@@ -2,16 +2,16 @@ class ApplicationController < ActionController::Base
   # 1. Gọi hàm chọn layout
   layout :layout_by_resource
 
-  private # Chỉ cần viết private một lần là đủ
+  private
 
   # 2. Định nghĩa logic chọn layout thông minh hơn
   def layout_by_resource
     if devise_controller?
-      "auth" # Layout riêng cho trang Đăng nhập/Đăng ký (nhớ phải có file layouts/auth.html.erb nhé)
+      "auth"
     elsif params[:controller].start_with?("admin/")
-      "admin" # Chỉ dùng AdminLTE cho các controller nằm trong thư mục Admin
+      "admin"
     else
-      "application" # Trang chủ (Home) và các trang User dùng layout bình thường
+      "application"
     end
   end
 

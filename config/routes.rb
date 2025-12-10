@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     # Trang chủ Dashboard Admin
     root to: "dashboard#index"
 
-    # Route OTP riêng của Admin (Giữ nguyên code cũ của bạn)
+    # Route OTP riêng của Admin
     get  'verify_otp/:id', to: 'otp#new', as: 'verify_otp'
     post 'verify_otp/:id', to: 'otp#verify'
 
@@ -49,8 +49,5 @@ Rails.application.routes.draw do
   # Health check
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # QUAN TRỌNG: Trang chủ công khai (Landing Page)
-  # User đăng nhập xong sẽ được Devise đưa về đây.
-  # Bạn cần tạo HomeController: `rails g controller Home index`
   root to: "home#index"
 end

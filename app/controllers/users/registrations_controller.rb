@@ -4,7 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       if resource.persisted?
         # 1. Sinh OTP & Gửi mail
         resource.generate_otp!
-        UserMailer.send_otp(resource).deliver_now # Dùng deliver_later nếu có cấu hình Sidekiq
+        UserMailer.send_otp(resource).deliver_now
 
         # 2. Ngăn không cho đăng nhập ngay -> Chuyển sang trang nhập OTP
         if resource.active_for_authentication?
